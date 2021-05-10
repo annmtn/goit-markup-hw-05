@@ -8,6 +8,8 @@
   --accent-color: #2196f3;
   --secondary-accent-color: #000000;
   --icons-color: #AFB1B8;
+  --duration: 250ms;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
@@ -56,7 +58,7 @@ img {
 .item {
   margin-left: 30px;
   margin-top: 30px;
- }
+}
 
 /* Скрытые заголовки студия + портфолио */
 .visually-hidden {
@@ -173,6 +175,16 @@ img {
   padding: 10px 34px;
   min-width: 200px;
   border: none;
+
+  transform: scale(1);
+
+  transition-property: transform;
+  transition-duration: 150ms;
+  transition-timing-function: var(--timing-function);
+}
+
+.hero-btn:active {
+  transform: scale(0.9);
 }
 
 /* section features */
@@ -304,7 +316,12 @@ img {
   height: 44px;
   border-radius: 50%;
   background-color: var(--primary-background-color);
+
+  transition-property: background-color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
 }
+
 .social-icons-link:hover, 
 .social-icons-link:focus {
   background-color: var(--accent-color);
@@ -343,15 +360,25 @@ img {
   height: 92px;
   border: 1px solid var(--icons-color);
   border-radius: 4px;
+  
+  transition-property: border-color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
 }
+
 .client-icons-svg {
   width: 106px;
   height: 60px;
   fill: var(--icons-color);
+
+  transition-property: fill;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
 }
+
 .client-icons-link:hover,
 .client-icons-link:focus {
-  border: 1px solid var(--accent-color);
+  border-color: var(--accent-color);
 }
 .client-icons-link:hover .client-icons-svg ,
 .client-icons-link:focus .client-icons-svg {
@@ -425,7 +452,13 @@ img {
 }
 
 
-/* ховер и фокус ко всем ссылкам */
+/* ховер и фокус к ссылкам хедера и футера */
+.link {
+  transition-property: color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
+}
+
 .link:hover,
 .link:focus {
   color: var(--accent-color);
@@ -475,7 +508,12 @@ img {
   border-radius: 4px;
   border: none;
   padding: 6px 22px;
+  
+  transition-property: background-color color box-shadow;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
 }
+
 .filters-btn.all{
   background-color: var(--accent-color);
   color: var(--accent-text-color);
@@ -516,7 +554,10 @@ img {
   background: rgba(33, 150, 243, 0.9);
 
   transform: translateY(100%);
-  transition-duration: 250ms;
+
+  transition-property: transform;
+  transition-duration:var(--duration);
+  transition-timing-function: var(--timing-function);
 }
 
 .portfolio-card-link:hover .portfolio-overlay,
@@ -563,8 +604,8 @@ img {
   opacity: 1; 
 
   transition-property: opacity;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
 }
 
 .backdrop.is-hidden {
@@ -592,8 +633,8 @@ img {
   background: var(--primary-background-color);
   
   transition-property: transform;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
 }
 
 .modal-button {
@@ -607,11 +648,20 @@ img {
   background-color: var(--primary-background-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+
+  transform: scale(1)
+
+  transition-property: transform;
+  transition-duration: 150ms;
+  transition-timing-function: var(--timing-function);
+}
+.modal-button:active {
+  transform: scale(0.9);
 }
 
-.modal-button:hover,
-.modal-button:focus {
-  border: 1px solid var(--accent-color);
+.modal-button:hover .modal-button-svg,
+.modal-button:focus .modal-button-svg {
+  fill: var(--accent-color);
 }
 
 .modal-button-svg {
