@@ -330,7 +330,12 @@ img {
   width: 20px;
   height: 20px;
   fill: var(--icons-color);
+
+  transition-property: fill;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
 }
+
 .social-icons-link:hover .social-icons-svg,
 .social-icons-link:focus .social-icons-svg {
   fill: var(--accent-text-color);
